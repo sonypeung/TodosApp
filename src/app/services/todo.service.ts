@@ -29,4 +29,10 @@ export class TodoService {
     let url: string = `${this.todosUrl}/${todo.id}`;
     return this.http.put(url, todo, httpOptions);
   }
+
+    // Complete a To do
+    deleteTodo(todo: Todo): Observable<Todo>{
+      let url: string = `${this.todosUrl}/${todo.id}`;
+      return this.http.delete<Todo>(url, httpOptions);
+    }
 }
